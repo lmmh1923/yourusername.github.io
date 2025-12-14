@@ -1,55 +1,308 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Crunch Culture Co.</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/yourusername.github.io/style.css">
-</head>
+:root{
+  --black:#0b0b0f;
+  --off:#f7f6fa;
+  --pink:#ff2fb3;
+  --green:#39ff14;
+  --purple:#8b5cff;
+  --white:#ffffff;
+}
 
-<body>
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family: Arial, sans-serif;
+  background: var(--off);
+  color: var(--black);
+  overflow-x:hidden;
+}
 
-<header class="hero-left">
-  <h1>Crunch Culture Co.</h1>
-  <p class="tagline">A blast to the past — with a crunch.</p>
-</header>
+/* Subtle sprinkle background */
+.sprinkles{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:0.55;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255,47,179,0.35) 0 6px, transparent 7px),
+    radial-gradient(circle at 70% 10%, rgba(57,255,20,0.28) 0 5px, transparent 6px),
+    radial-gradient(circle at 85% 55%, rgba(139,92,255,0.25) 0 7px, transparent 8px),
+    radial-gradient(circle at 25% 70%, rgba(255,47,179,0.25) 0 5px, transparent 6px),
+    radial-gradient(circle at 45% 35%, rgba(57,255,20,0.20) 0 6px, transparent 7px),
+    radial-gradient(circle at 60% 80%, rgba(139,92,255,0.20) 0 5px, transparent 6px);
+  animation: drift 70s linear infinite;
+}
+@keyframes drift { from{background-position:0 0;} to{background-position:1200px 800px;} }
 
-<section class="vision">
-  <h2>Our Vision</h2>
-  <p>
-    Crunch Culture Co. creates neo-nostalgic snacks inspired by the flavors we grew up loving,
-    reimagined with bold crunch for today. Our first product, Rewind Crunch™, brings birthday
-    cake nostalgia into a modern, craveable snack.
-  </p>
-</section>
+/* Sticky top bar */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:10;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 18px;
+  background: rgba(247,246,250,0.78);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(11,11,15,0.10);
+}
 
-<section class="product hero-right">
-  <h2>Rewind Crunch™ – Birthday Cake Remix</h2>
+.nav a{
+  color: var(--black);
+  text-decoration:none;
+  font-weight:800;
+  margin-left:16px;
+  opacity:0.85;
+}
+.nav a:hover{ opacity:1; }
 
-  <img
-    src="/yourusername.github.io/images/rewind-front.png"
-    alt="Rewind Crunch front packaging"
-  >
+/* Bitten “C” mark */
+.brandmark{
+  width:46px; height:46px;
+  border-radius:14px;
+  background: var(--black);
+  position:relative;
+  display:grid;
+  place-items:center;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.15);
+}
+.brandmark .C{
+  color: var(--green);
+  font-weight:900;
+  font-size:26px;
+  line-height:1;
+}
+.brandmark .bite{
+  position:absolute;
+  right:6px; top:9px;
+  width:14px; height:14px;
+  border-radius:999px;
+  background: var(--off);
+  box-shadow: -6px 10px 0 0 var(--off), -2px 20px 0 0 var(--off);
+}
 
-  <p>
-    Crunchy birthday cake snack clusters with vanilla sweetness, colorful sprinkles,
-    and a satisfying crunch.
-  </p>
+/* Layout */
+.container{ max-width:1080px; margin:0 auto; padding:18px; }
 
-  <a class="button" href="#" onclick="alert('Checkout coming soon!')">
-    Buy Now
-  </a>
+.hero{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap:22px;
+  padding:26px 0 10px;
+}
 
-  <div class="quote">
-    “This tastes exactly like the snacks I grew up with — but better.”
-    <span>— Early Taste Tester, 34</span>
-  </div>
-</section>
+.hero-left{
+  padding:18px;
+  border-radius:22px;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255,47,179,0.18), transparent 45%),
+    radial-gradient(circle at 90% 15%, rgba(57,255,20,0.14), transparent 45%),
+    radial-gradient(circle at 70% 90%, rgba(139,92,255,0.12), transparent 55%),
+    rgba(255,255,255,0.65);
+  border:1px solid rgba(11,11,15,0.10);
+  animation: floatIn 0.7s ease-out both;
+}
+.hero-right{ animation: floatIn 0.9s ease-out both; }
+@keyframes floatIn{
+  from{ opacity:0; transform:translateY(14px); }
+  to{ opacity:1; transform:translateY(0); }
+}
 
-<footer>
-  <p>© Crunch Culture Co.</p>
-  <p>Columbus Pilot Launch</p>
-</footer>
+.pill{
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:999px;
+  font-weight:900;
+  font-size:12px;
+  background: rgba(11,11,15,0.08);
+}
 
-</body>
-</html>
+h1{ margin:14px 0 8px; font-size:48px; letter-spacing:-0.5px; }
+.tagline{ margin:0; font-size:20px; font-weight:900; }
+.neon{ color: var(--purple); }
+
+.subcopy{
+  margin-top:12px;
+  font-size:16px;
+  line-height:1.5;
+  opacity:0.88;
+  max-width:52ch;
+}
+
+.cta-row{ display:flex; gap:12px; margin:16px 0 12px; flex-wrap:wrap; }
+
+.button{
+  display:inline-block;
+  padding:14px 18px;
+  border-radius:14px;
+  font-weight:900;
+  text-decoration:none;
+  border:2px solid var(--black);
+  color: var(--black);
+  background: var(--white);
+  cursor:pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.button:hover{ transform: translateY(-1px); }
+.button.small{ padding:10px 14px; border-radius:12px; }
+
+.button.glow{
+  background: var(--black);
+  color: var(--off);
+  border-color: var(--black);
+  animation: pulse 2.8s infinite;
+}
+@keyframes pulse{
+  0%,100%{
+    box-shadow: 0 0 0 3px rgba(57,255,20,0.25), 0 18px 30px rgba(0,0,0,0.18);
+  }
+  50%{
+    box-shadow: 0 0 0 6px rgba(255,47,179,0.28), 0 22px 38px rgba(0,0,0,0.24);
+  }
+}
+.button.ghost{
+  background: transparent;
+  border-color: rgba(11,11,15,0.25);
+}
+
+.quote{
+  margin-top:10px;
+  padding:14px 14px;
+  border-radius:18px;
+  background: rgba(255,255,255,0.85);
+  border:1px solid rgba(11,11,15,0.12);
+  font-weight:900;
+  max-width:520px;
+}
+.quote span{
+  display:block;
+  margin-top:6px;
+  opacity:0.7;
+  font-size:14px;
+  font-weight:800;
+}
+
+/* Features */
+.features{ display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-top:12px; }
+.feature{
+  display:flex; gap:10px;
+  padding:12px;
+  border-radius:18px;
+  background: rgba(255,255,255,0.75);
+  border:1px solid rgba(11,11,15,0.08);
+}
+.icon{
+  width:36px; height:36px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  background: rgba(255,47,179,0.15);
+  border:1px solid rgba(255,47,179,0.25);
+}
+.ftitle{ font-weight:1000; }
+.fsub{ opacity:0.75; font-weight:700; font-size:13px; margin-top:2px; }
+
+/* Product card */
+.hero-right{ display:flex; justify-content:center; }
+.card{
+  width:100%;
+  max-width:420px;
+  border-radius:26px;
+  overflow:hidden;
+  background: var(--white);
+  border:1px solid rgba(11,11,15,0.12);
+  box-shadow: 0 22px 40px rgba(0,0,0,0.12);
+}
+.card:hover{ transform: rotate(-0.5deg) scale(1.02); }
+.card-top{
+  padding:18px;
+  background: linear-gradient(135deg, rgba(255,47,179,0.20), rgba(139,92,255,0.12)), var(--off);
+  border-bottom:1px solid rgba(11,11,15,0.08);
+}
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background: var(--pink);
+  color: var(--white);
+  font-weight:1000;
+  font-size:12px;
+}
+.title{ margin-top:10px; font-size:24px; font-weight:1000; }
+.subtitle{ margin-top:4px; font-weight:900; color: var(--purple); }
+
+.packshot{
+  width:100%;
+  height:auto;
+  display:block;
+  padding:14px 14px 0;
+}
+
+.card-bottom{ padding:14px 18px 18px; }
+.mini{ font-weight:800; opacity:0.78; }
+.price-row{ display:flex; align-items:center; justify-content:space-between; margin-top:12px; }
+.price{ font-size:22px; font-weight:1000; }
+
+/* Sections */
+.section{
+  margin-top:24px;
+  padding:22px 18px;
+  border-radius:22px;
+  background: rgba(255,255,255,0.62);
+  border:1px solid rgba(11,11,15,0.10);
+}
+h2{ margin:0 0 10px; font-size:28px; }
+.lead{ margin:0; line-height:1.6; font-weight:800; opacity:0.85; max-width:78ch; }
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:12px;
+  margin-top:14px;
+}
+.tile{
+  padding:14px;
+  border-radius:18px;
+  background: rgba(255,255,255,0.86);
+  border:1px solid rgba(11,11,15,0.08);
+}
+.tile h3{ margin:0 0 8px; }
+.tile p{ margin:0; opacity:0.85; font-weight:700; line-height:1.5; }
+
+/* Buy */
+.buy-card{
+  padding:18px;
+  border-radius:22px;
+  background: rgba(11,11,15,0.92);
+  color: var(--off);
+}
+.buy-card h2{ color: var(--off); }
+.buy-card .lead{ color: rgba(247,246,250,0.85); }
+.buy-row{ display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap; margin-top:14px; }
+.qty{ display:flex; flex-direction:column; gap:4px; }
+.label{ opacity:0.72; font-weight:900; font-size:12px; }
+.value{ font-weight:1000; font-size:16px; }
+.fineprint{ margin-top:10px; font-weight:800; opacity:0.7; font-size:12px; }
+
+/* Footer */
+.footer{ margin:22px 0 8px; padding:12px 0; }
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 18px;
+  border-radius:20px;
+  background: rgba(255,255,255,0.7);
+  border:1px solid rgba(11,11,15,0.10);
+}
+.foot-title{ font-weight:1000; }
+.foot-sub{ opacity:0.7; font-weight:800; margin-top:2px; }
+.foot-link{ font-weight:1000; color: var(--purple); }
+
+/* Mobile */
+@media (max-width: 900px){
+  .hero{ grid-template-columns: 1fr; }
+  h1{ font-size:40px; }
+  .features{ grid-template-columns: 1fr; }
+  .grid{ grid-template-columns: 1fr; }
+}
