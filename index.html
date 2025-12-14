@@ -1,55 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Crunch Culture Co.</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/yourusername.github.io/style.css">
+  <link rel="stylesheet" href="/yourusername.github.io/style.css" />
 </head>
 
 <body>
+  <div class="sprinkles" aria-hidden="true"></div>
 
-<header class="hero-left">
-  <h1>Crunch Culture Co.</h1>
-  <p class="tagline">A blast to the past — with a crunch.</p>
-</header>
+  <header class="topbar">
+    <div class="brandmark" aria-label="Crunch Culture mark">
+      <span class="C">C</span>
+      <span class="bite" aria-hidden="true"></span>
+    </div>
 
-<section class="vision">
-  <h2>Our Vision</h2>
-  <p>
-    Crunch Culture Co. creates neo-nostalgic snacks inspired by the flavors we grew up loving,
-    reimagined with bold crunch for today. Our first product, Rewind Crunch™, brings birthday
-    cake nostalgia into a modern, craveable snack.
-  </p>
-</section>
+    <nav class="nav">
+      <a href="#product">Product</a>
+      <a href="#vision">Vision</a>
+      <a href="#buy">Buy</a>
+    </nav>
+  </header>
 
-<section class="product hero-right">
-  <h2>Rewind Crunch™ – Birthday Cake Remix</h2>
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="pill">Columbus Pilot • Limited First Drop</div>
+        <h1>Crunch Culture Co.</h1>
+        <p class="tagline">A blast to the past — <span class="neon">with a crunch.</span></p>
 
-  <img
-    src="/yourusername.github.io/images/rewind-front.png"
-    alt="Rewind Crunch front packaging"
-  >
+        <p class="subcopy">
+          Neo-nostalgic snacks inspired by the flavors we grew up loving, remixed for today’s cravings.
+        </p>
 
-  <p>
-    Crunchy birthday cake snack clusters with vanilla sweetness, colorful sprinkles,
-    and a satisfying crunch.
-  </p>
+        <div class="cta-row">
+          <a class="button glow" href="#buy">Shop Rewind Crunch™</a>
+          <a class="button ghost" href="#vision">Our Story</a>
+        </div>
 
-  <a class="button" href="#" onclick="alert('Checkout coming soon!')">
-    Buy Now
-  </a>
+        <div class="quote">
+          “This tastes exactly like the snacks I grew up with — but better.”
+          <span>— Early Taste Tester, 34</span>
+        </div>
 
-  <div class="quote">
-    “This tastes exactly like the snacks I grew up with — but better.”
-    <span>— Early Taste Tester, 34</span>
-  </div>
-</section>
+        <div class="features">
+          <div class="feature"><span class="icon">⚡</span><div><div class="ftitle">Big Crunch</div><div class="fsub">Texture-forward clusters</div></div></div>
+          <div class="feature"><span class="icon">🎂</span><div><div class="ftitle">Birthday Cake Remix</div><div class="fsub">Vanilla + sprinkle energy</div></div></div>
+          <div class="feature"><span class="icon">🕹️</span><div><div class="ftitle">Nostalgia, Upgraded</div><div class="fsub">Throwback taste, modern vibe</div></div></div>
+        </div>
+      </div>
 
-<footer>
-  <p>© Crunch Culture Co.</p>
-  <p>Columbus Pilot Launch</p>
-</footer>
+      <div class="hero-right" id="product">
+        <div class="card">
+          <div class="card-top">
+            <div class="badge">NEW</div>
+            <div class="title">Rewind Crunch™</div>
+            <div class="subtitle">Birthday Cake Remix</div>
+          </div>
 
+          <img
+            class="packshot"
+            src="/yourusername.github.io/images/rewind-front.png"
+            alt="Rewind Crunch front packaging"
+          />
+
+          <div class="card-bottom">
+            <div class="mini">Crunchy birthday cake snack clusters • 6 oz</div>
+            <div class="price-row">
+              <div class="price">$4.49</div>
+              <a class="button small glow" href="#buy">Buy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISION -->
+    <section class="section" id="vision">
+      <h2>Our Vision</h2>
+      <p class="lead">
+        We build snacks that feel like a memory — and hit like a modern craving. Rewind Crunch™ is the first drop:
+        iconic flavor, bold crunch, and packaging you can’t ignore.
+      </p>
+
+      <div class="grid">
+        <div class="tile">
+          <h3>Why It Works</h3>
+          <p>Millennial nostalgia meets premium playful design — indulgent without feeling childish.</p>
+        </div>
+        <div class="tile">
+          <h3>How We Launch</h3>
+          <p>Columbus pilot release to validate repeat purchase, pricing, and retail readiness.</p>
+        </div>
+        <div class="tile">
+          <h3>What’s Next</h3>
+          <p>Limited-edition remixes + seasonal drops to drive buzz and collectable demand.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUY -->
+    <section class="section buy" id="buy">
+      <div class="buy-card">
+        <h2>Ready to Rewind?</h2>
+        <p class="lead">Grab the first drop — Birthday Cake Remix — before it’s gone.</p>
+
+        <div class="buy-row">
+          <div class="qty">
+            <span class="label">Starter Bundle</span>
+            <span class="value">3-Pack</span>
+          </div>
+          <div class="qty">
+            <span class="label">Price</span>
+            <span class="value">$12.99</span>
+          </div>
+
+          <a class="button glow" href="#" onclick="alert('Checkout coming soon!')">Buy Now</a>
+        </div>
+
+        <div class="fineprint">
+          *Pilot storefront. Checkout will be fully enabled for launch day.
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <div class="foot-title">Crunch Culture Co.</div>
+          <div class="foot-sub">Columbus Pilot Launch</div>
+        </div>
+        <div class="foot-link">crunchculture.co</div>
+      </div>
+    </footer>
+  </main>
 </body>
 </html>
