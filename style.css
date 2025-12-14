@@ -1,102 +1,55 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f7f6fa;
-  color: #0b0b0f;
-  margin: 0;
-  text-align: center;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crunch Culture Co.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/yourusername.github.io/style.css">
+</head>
 
-header {
-  background: #ff2fb3;
-  padding: 40px 20px;
-}
+<body>
 
-header h1 {
-  margin: 0;
-  font-size: 42px;
-}
+<header class="hero-left">
+  <h1>Crunch Culture Co.</h1>
+  <p class="tagline">A blast to the past — with a crunch.</p>
+</header>
 
-.tagline {
-  font-weight: bold;
-  margin-top: 10px;
-}
+<section class="vision">
+  <h2>Our Vision</h2>
+  <p>
+    Crunch Culture Co. creates neo-nostalgic snacks inspired by the flavors we grew up loving,
+    reimagined with bold crunch for today. Our first product, Rewind Crunch™, brings birthday
+    cake nostalgia into a modern, craveable snack.
+  </p>
+</section>
 
-section {
-  padding: 40px 20px;
-}
+<section class="product hero-right">
+  <h2>Rewind Crunch™ – Birthday Cake Remix</h2>
 
-.product img {
-  width: 260px;
-  margin: 15px;
-  border-radius: 16px;
-}
+  <img
+    src="/yourusername.github.io/images/rewind-front.png"
+    alt="Rewind Crunch front packaging"
+  >
 
-.button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 15px 25px;
-  background: #0b0b0f;
-  color: white;
-  text-decoration: none;
-  border-radius: 12px;
-  font-weight: bold;
-}
+  <p>
+    Crunchy birthday cake snack clusters with vanilla sweetness, colorful sprinkles,
+    and a satisfying crunch.
+  </p>
 
-footer {
-  background: #0b0b0f;
-  color: white;
-  padding: 20px;
-  margin-top: 40px;
-}
-/* --- POP Upgrade #1: Hero entrance animation --- */
-.hero-left {
-  animation: floatIn 0.7s ease-out both;
-}
-.hero-right {
-  animation: floatIn 0.9s ease-out both;
-}
+  <a class="button" href="#" onclick="alert('Checkout coming soon!')">
+    Buy Now
+  </a>
 
-@keyframes floatIn {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* --- POP Upgrade #2: Buy button pulse --- */
-.button.glow {
-  animation: pulse 2.8s infinite;
-}
+  <div class="quote">
+    “This tastes exactly like the snacks I grew up with — but better.”
+    <span>— Early Taste Tester, 34</span>
+  </div>
+</section>
 
-@keyframes pulse {
-  0%, 100% {
-    box-shadow:
-      0 0 0 3px rgba(57,255,20,0.25),
-      0 18px 30px rgba(0,0,0,0.18);
-  }
-  50% {
-    box-shadow:
-      0 0 0 6px rgba(255,47,179,0.28),
-      0 22px 38px rgba(0,0,0,0.24);
-  }
-}
-/* --- POP Upgrade #3: Social proof quote --- */
-.quote {
-  margin-top: 18px;
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.8);
-  border: 1px solid rgba(11,11,15,0.12);
-  font-weight: 900;
-}
+<footer>
+  <p>© Crunch Culture Co.</p>
+  <p>Columbus Pilot Launch</p>
+</footer>
 
-.quote span {
-  display: block;
-  margin-top: 6px;
-  opacity: 0.7;
-  font-size: 14px;
-  font-weight: 800;
-}
+</body>
+</html>
