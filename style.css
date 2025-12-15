@@ -368,3 +368,10 @@ body{
     radial-gradient(circle at 50% 90%, rgba(57,255,20,0.06), transparent 45%),
     #f7f6fa;
 }
+/* Make the sticky nav sit nicely under the banner */
+.topbar{
+  top: 0;
+}
+.brand-banner{
+  margin: 0;
+}
